@@ -1,75 +1,62 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt</title>
-
-  <!-- Din CSS -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      background: #f5f7fa;
-    }
-
-    .contact-box {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 12px 20px;
-      border: none;
-      background: #2d5bff;
-      color: white;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    #formMsg {
-      margin-top: 15px;
-      font-weight: bold;
-    }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Book lektiehjælp i dag | 12A Lektiehjælp</title>
+    <meta name="description" content="Book lektiehjælp eller gratis samtale i dag. Hurtigt svar og fleksible tider. Få hjælp allerede denne uge.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
-
 <body>
 
-<div class="contact-box">
-  <h2>Kontakt mig</h2>
+    <header>
+        <div>
+            <h1>12A Lektiehjælp</h1>
+            <img class="logo" src="./billeder/logo.png" alt="Elev med hånd i vejret">
+        </div>
 
-  <form id="contactForm">
-    <input type="text" name="name" placeholder="Dit navn" required>
-    <input type="email" name="email" placeholder="Din email" required>
-    <textarea name="message" rows="5" placeholder="Din besked" required></textarea>
+        <nav>
+            <a href="index.html">Forside</a>
+            <a href="ydelser.html">Fag</a>
+            <a href="priser.html">Priser</a>
+            <a href="om-mig.html">Om mig</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
 
-    <!-- FormSubmit indstillinger -->
-    <input type="hidden" name="_captcha" value="false">
+    <main>
+    <form class="contact-form" action="https://formsubmit.co/albertoarendt@gmail.com" method="POST">
+        <!-- FormSubmit: sender beskeden til mail. -->
+        <input type="hidden" name="_subject" value="Ny henvendelse fra 12A Lektiehjælp">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="tak.html">
+        <!-- Honeypot (anti-spam) -->
+        <input type="text" name="_honey" style="display:none">
+        <label>
+        Dit navn
+        <input type="text" name="name" autocomplete="name" required>
+        </label>
 
-    <button type="submit">Send besked</button>
-  </form>
+        <label>
+        Din email
+        <input type="email" name="email" autocomplete="email" required>
+        </label>
 
-  <p id="formMsg"></p>
-</div>
+        <label>
+        Besked
+        <textarea name="message" rows="6" required></textarea>
+        </label>
 
-<script src="js/script.js"></script>
+        <button type="submit">Send</button>
+    </form>
+    </main>
+
+    <footer>
+        <p>© 2026 12A Lektiehjælp</p>
+        <p>Email: albertoarendt@gmail.com</p>
+    </footer>
 
 </body>
 </html>
