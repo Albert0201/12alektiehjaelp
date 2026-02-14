@@ -1,0 +1,334 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --bg: #f4f4f4;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+
+  --nav: #26314d;
+  --footer: #2c3e50;
+
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+
+  --radius: 14px;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  letter-spacing: 0.2px;
+}
+
+header {
+  background-color: var(--nav);
+  color: white;
+  padding: 14px 16px;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.logo {
+  width: 54px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+main {
+  flex: 1;
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer);
+  color: white;
+  padding: 10px 16px;
+}
+
+footer p {
+  margin: 6px 0;
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 18px;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.parent {
+  text-align: center;
+  padding: 10px 16px 40px;
+}
+
+/* Forside / hero */
+#overskrift {
+  text-align: center;
+  margin: 26px auto 10px;
+  max-width: 980px;
+  padding: 0 16px;
+  font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+  line-height: 1.15;
+}
+
+.hero-content {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.8;
+}
+
+.hero-content li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.hero-content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.pic {
+  max-width: 440px;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 800px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Cards (Fag + Priser) */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 36px 16px;
+  flex-wrap: wrap;
+  height: auto;   /* eller bare fjern height-linjen */
+}
+
+.card {
+  background: var(--surface);
+  padding: 18px 18px 16px;
+  width: clamp(260px, 34vw, 360px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* Om mig */
+.about {
+  padding: 40px 16px 10px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about img {
+  width: min(180px, 45vw);
+  height: auto;
+  border-radius: 14px;
+}
+
+.about p {
+  margin: 18px auto 0;
+  max-width: 760px;
+  line-height: 1.75;
+}
+
+.diplomer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 10px 16px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.diplomer img {
+  width: clamp(240px, 28vw, 360px);
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.diplomer figure {
+  margin: 0;
+}
+
+.diplomer figcaption {
+  margin-top: 8px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Kontakt */
+.contact-form {
+  max-width: 520px;
+  margin: 34px auto;
+  padding: 18px;
+}
+
+form.contact-form {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+form.contact-form input,
+form.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+form.contact-form textarea {
+  resize: vertical;
+}
+
+form.contact-form button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+form.contact-form button:hover {
+  background: var(--primary-dark);
+}
+
+.cta {
+  background: #f5f7ff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #2d5bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
